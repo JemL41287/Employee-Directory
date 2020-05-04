@@ -39,6 +39,7 @@ export default class Home extends Component {
         }
     };
 
+
     findEmployee = () => {
         var filteredEmp;
         var filteredName = this.state.search;
@@ -104,7 +105,7 @@ export default class Home extends Component {
                             <hr></hr>
                         </Col>
                         <Col size="md-2">
-                            <h3>Date of Birth</h3>
+                            <h3>DOB</h3>
                             <hr></hr>
                         </Col>
                     </Row>
