@@ -9,3 +9,7 @@
     background-color: teal;
     font-family: 'Roboto', sans-serif;
 }
+
+.btn:hover {
+    background-color: lightseagreen;
+}

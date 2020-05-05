@@ -5,6 +5,8 @@ import Row from "../components/Row"
 import Col from "../components/Col"
 import Search from "../components/Search"
 import { Link } from "react-router-dom";
+import moment from "moment";
+
 
 
 export default class Home extends Component {
@@ -40,7 +42,8 @@ export default class Home extends Component {
     };
 
 
-    findEmployee = () => {
+    findEmployee = (e) => {
+        //e.preventDefault();
         var filteredEmp;
         var filteredName = this.state.search;
         filteredEmp = this.state.Employees.filter(function (employee) {
@@ -91,7 +94,7 @@ export default class Home extends Component {
                             <h3>
                                 Name{" "}
                                 <button onClick={this.sortName}>
-                                    <i className="fas fa-caret-down"></i>
+                                <i className="fas fa-sort fa-xs"></i>
                                 </button>
                             </h3>
                             <hr></hr>
@@ -125,7 +128,7 @@ export default class Home extends Component {
                                 <Col size="md-3">
                                     <Link to={"/"}>{randomEmp.email}</Link>
                                 </Col>
-                                <Col size="md-2">{randomEmp.dob.date}</Col>
+                                <Col size="md-2">{moment(randomEmp.dob.date.split("T")[0], "YYYY-MM-DD").format("l")}</Col>
                             </Row>
                         );
                     })}

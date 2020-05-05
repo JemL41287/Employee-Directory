@@ -16,7 +16,9 @@ function Search(props) {
           id="index"
         />
         <br></br>
-        <button type="submit" onClick={props.findEmployee} className="btn btn-success">
+        <button type="submit" onClick={(e) => {
+          e.preventDefault()
+          props.findEmployee()}} className="btn btn-success">
           Search
         </button>
       </div>
